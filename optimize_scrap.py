@@ -1,3 +1,4 @@
+import os
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -5,8 +6,8 @@ import time
 import streamlit as st
 import pandas as pd
 
-# API Key
-API_KEY = "40f26a44ac94a42d338c50c2634481f872937b13355521c37b24ca55530ad05a"
+# Leer la API Key desde las variables de entorno
+API_KEY = os.getenv("API_KEY")
 
 # Función para realizar la búsqueda con SerpAPI
 def search_google(query, api_key=API_KEY, num_results=100):
