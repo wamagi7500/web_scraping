@@ -2,9 +2,14 @@ import requests
 import re
 from bs4 import BeautifulSoup
 import time
+import streamlit as st
+import pandas as pd
+
+# API Key
+API_KEY = "40f26a44ac94a42d338c50c2634481f872937b13355521c37b24ca55530ad05a"
 
 # Función para realizar la búsqueda con SerpAPI
-def search_google(query, api_key, num_results=100):
+def search_google(query, api_key=API_KEY, num_results=100):
     search_url = "https://serpapi.com/search"
     params = {
         'q': query,
@@ -44,7 +49,7 @@ def extract_site_name(html):
 
 # Función para obtener los emails y nombres de una lista de URLs
 def get_emails_and_names_from_urls(urls):
-    emails_found = set()
+    emails_found = []
     names_found = []
     
     for url in urls:
@@ -57,10 +62,11 @@ def get_emails_and_names_from_urls(urls):
                 soup = BeautifulSoup(response.text, "html.parser")
                 page_html = str(soup)
                 emails = extract_emails_from_html(page_html)
-                emails_found.update(emails)
-                # Añadir el nombre del sitio web a la lista de nombres
-                site_name = extract_site_name(page_html)
-                names_found.extend([site_name] * len(emails))
+                if emails:
+                    emails_found.extend(emails)
+                    # Añadir el nombre del sitio web a la lista de nombres
+                    site_name = extract_site_name(page_html)
+                    names_found.extend([site_name] * len(emails))
             else:
                 print(f"No se pudo acceder a {url}. Status code: {response.status_code}")
         
@@ -69,30 +75,27 @@ def get_emails_and_names_from_urls(urls):
         
     return names_found, emails_found
 
-# Función principal para buscar y extraer correos electrónicos y nombres de sitios web
-def main():
-    query = " bahía blanca CAFETERÍA restaurante"
-    api_key = "40f26a44ac94a42d338c50c2634481f872937b13355521c37b24ca55530ad05a"
-    
-    print("Realizando la búsqueda en Google...")
-    urls = search_google(query, api_key)
-    
-    
-    if not urls:
-        print("No se encontraron resultados.")
-        return
-    
-    print(f"Se encontraron {len(urls)} URLs. Extrayendo correos electrónicos y nombres de sitios web...")
-    names, emails = get_emails_and_names_from_urls(urls)
-    
-    print("Nombres de sitios web:")
-    for name in names:
-        print(name)
-    
-    print("\nCorreos electrónicos:")
-    for email in emails:
-        print(email)
+# Interfaz de Usuario con Streamlit
+st.title("Web Scraping de Correos Electrónicos")
+query = st.text_input("Consulta de Búsqueda")
+num_results = st.number_input("Número de Resultados", min_value=1, max_value=100, value=10)
 
-if __name__ == "__main__":
-    main()
-
+if st.button("Buscar"):
+    if query:
+        urls = search_google(query, API_KEY, num_results)
+        names, emails = get_emails_and_names_from_urls(urls)
+        if emails:
+            df = pd.DataFrame({'Nombre': names, 'Email': emails})
+            st.write(df)
+            csv = df.to_csv(index=False).encode('utf-8')
+            st.download_button(
+                label="Descargar correos electrónicos como CSV",
+                data=csv,
+                file_name='emails.csv',
+                mime='text/csv',
+            )
+            st.success("Correos electrónicos listos para descargar.")
+        else:
+            st.warning("No se encontraron correos electrónicos.")
+    else:
+        st.warning("Por favor, ingresa una consulta de búsqueda.")
