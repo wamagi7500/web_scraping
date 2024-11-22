@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Importación de fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #4B0082;
+            font-family: 'Questrial', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .header-title {
+            flex-grow: 1;
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .title {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .title h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #f8f9fa;
+        }
+
+        .title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: #DCDCDC;
+        }
+
+        .paragraph {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            font-family: 'Questrial', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .images-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-placeholder, .video-container {
+            height: 300px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .image-placeholder img, .video-container video, .video-container iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .features h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .app-container, .calendar-container {
+            margin: 30px 0;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .app-container h3, .calendar-container h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .images-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header-title {
+                font-size: 1.5rem;
+            }
+
+            .title h1 {
+                font-size: 2.5rem;
+            }
+
+            .title h2 {
+                font-size: 1.5rem;
+            }
+
+            .image-placeholder, .video-container {
+                height: auto;
+                padding: 10px;
+            }
+
+            .image-placeholder img, .video-container video, .video-container iframe {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./INGENIERO.png" alt="Logo Ingeniero">
+            </div>
+            <div class="header-title">
+                <h1>Profesionalizá tus trabajos. Controlá el crecimiento de tu empresa.</h1>
+            </div>
+        </header>
+
+        <div class="title">
+            <h1>LABURAPP</h1>
+            <h2>APLICACIÓN PARA LA GESTIÓN DE TUS TRABAJOS</h2>
+        </div>
+
+        <div class="paragraph">
+            <p>Aplicación que registra todos los datos de tus clientes, hace un historial de tus obras terminadas, te permite llevar control de ingresos, de tus gastos, de los gastos de tus empleados. 
+                Almacena los pagos realizados y pendientes.
+                Te permite agregar fotos y videos a tus preupuestos. 
+               </p>
+            <p> Crea el presupuesto automáticamente y listo para enviar. </p>
+        </div>
+
+        <div class="images-container">
+            <div class="image-placeholder">
+                <img src="./Captura de pantalla 2024-11-18 211823.png" alt="Captura de pantalla">
+            </div>
+            <div class="features">
+                <h3>Características</h3>
+                <ul>
+                    <li>Agenda completa de clientes</li>
+                    <li>Historial de obras</li>
+                    <li>Añadí fotos y videos a tu presupuesto</li>
+                    <li>Registrá forma y cantidad de cobros</li>
+                    <li>Controla cada gasto de tus empleados</li>
+                    <li>Almacená trabajos por cliente</li>
+                    <li>Crea automáticamente el presupuesto</li>
+                    <li>Hacé remitos de pagos parciales</li>
+                </ul>
+            </div>
+            <div class="video-container">
+                <!-- Para video local -->
+                <video controls>
+                    <source src="./Edited_Recorder_19112024_011423.mp4" type="video/mp4">
+                    <!-- Opcional: agregar subtítulos -->
+                    <track label="Español" kind="subtitles" srclang="es" src="./subtitulos.vtt" default>
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <h3>Explorá vos mismo la aplicación</h3>
+            <iframe src="https://www.appsheet.com/start/38f4502c-f240-4d8e-a148-228a58a9b5ef?autoplay=1" width="100%" height="350" allow="autoplay; encrypted-media" style="border:none;"></iframe>
+            <!-- Para incrustar AppSheet, usa el código de inserción proporcionado por Google aquí -->
+        </div>
+        
+        <div class="calendar-container">
+            <h3>Agendate una reunión para saber más</h3>
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0NL4OphkEKFYqHXMm2uHiaM7pw7lmD3cI6Co9msonS1rv0lpp2cPoHSgPOtIiWuT_eCauMR65T?gv=true" style="border: 0; width: 100%; height: 600px;" frameborder="0"></iframe>
+            <!-- Para incrustar el calendario de Google, usa el código de inserción proporcionado por Google aquí -->
+        </div>
+    </div>
+</body>
+</html>

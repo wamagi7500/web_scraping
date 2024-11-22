@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 100px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .paragraph {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-placeholder {
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-container {
+            margin: 30px 0;
+            min-height: 500px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .calendar-container {
+            margin: 30px 0;
+            min-height: 400px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <!-- Aquí va tu logo -->
+                <img src="./INGENIERO.png" alt="Logo Ingeniero" width="150" height="150">
+            </div>
+        </header>
+
+        <div class="title">
+            <h1>LABURAPP</h1>
+            <h2>Aplicación de Gestión de tus trabajos</h2>
+        </div>
+
+        <div class="paragraph">
+            <p>Aplicación que registra todos los datos de tus clientes, hace un historial de tus obras terminadas, te permite llevar control de ingresos, de tus gastos, de los gastos de tus empleados. 
+                Almacena los pagos realizados y pendientes.
+                Te permite agregar fotos y videos a tus preupuestos. 
+                Crea el presupuesto automáticamente y listo para enviar. </p>
+        </div>
+
+        <div class="images-container">
+            <div class="image-placeholder">
+                <!-- Aquí va tu primera imagen -->
+                <p>Imagen 1</p>
+            </div>
+            <div class="image-placeholder">
+                <!-- Aquí va tu segunda imagen -->
+                <p>Imagen 2</p>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <!-- Aquí va tu AppSheet -->
+            <h3>Espacio para AppSheet</h3>
+            <!-- Para incrustar AppSheet, usa el código de inserción proporcionado por Google aquí -->
+        </div>
+
+        <div class="calendar-container">
+            <!-- Aquí va tu calendario -->
+            <h3>Espacio para Calendario</h3>
+            <!-- Para incrustar el calendario de Google, usa el código de inserción proporcionado por Google aquí -->
+        </div>
+    </div>
+</body>
+</html>
